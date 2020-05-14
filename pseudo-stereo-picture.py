@@ -81,6 +81,11 @@ def main():
         if key==27:
             break
 
+    sbs_img = np.hstack((imageStack[0], imageStack[-1]))
+    cv2.imshow('Side-by-side stereo image', sbs_img)
+    print('Output the side-by-side stereo image to \'sbs3d.jpg\'')
+    cv2.imwrite('sbs3d.jpg', sbs_img)
+
     # Show results
     while True:
         for image in imageStack:

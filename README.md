@@ -1,9 +1,11 @@
 # Pseudo Stereo Picture Generation Demo
-This program generates a set of pseudo stereo pictures from an input image using the [Intel(r) Distribution of OpenVINO(tm) toolkit](https://software.intel.com/en-us/openvino-toolkit).  
-The demo program uses a DL model, `midasnet` to generate a depth map from a picture, shift the pixels horizontally according to the depth of the pixels, then compensate the lacking pixels caused by the shifted pixels with an image inpainting DL model `gmcnn`.  
+This program generates a set of pseudo stereo pictures from an input image.using  the [Intel(r) Distribution of OpenVINO(tm) toolkit](https://software.intel.com/en-us/openvino-toolkit).  
+The demo program uses a DL model, `midasnet` to generate a depth map from a picture , shift the pixcels horizontally according to the depth of the pixels, then compensate the lacking pixcels caused by the shifted pixels with an image inpainting DL model `gmcnn`.  
+The demo program generates a side-by-side stereo image to a file `sbs3d.jpg`. You can watch the pseudo 3D (like) image with a 3D viewer.  
 
 このデモプログラムは[Intel(r) Distribution of OpenVINO(tm) toolkit](https://software.intel.com/en-us/openvino-toolkit)を使用し、１枚の絵から疑似ステレオ画像を作成するものです。  
-プログラムは入力画像から`midasnet` DLモデルを使用して深度マップを作成し、ピクセル深度に従って各ピクセルを横方向にシフトし、ピクセルシフトによりできた欠損部分を`gmcnn`画像修復DLモデルで補うことで、疑似ステレオ画像（っぽい）画像を生成しています。
+プログラムは入力画像から`midasnet` DLモデルを使用して深度マップを作成し、ピクセル深度に従って各ピクセルを横方向にシフトし、ピクセルシフトによりできた欠損部分を`gmcnn`画像修復DLモデルで補うことで、疑似ステレオ画像（っぽい）画像を生成しています。  
+プログラムは'`sbs3d.jpg`'というファイルにサイドバイサイド3Dイメージを書き出します。3Dビュワーなどを使用することでステレオ(っぽく見えなくもない）画像を見ることができます。  
 
 
 ### Generated Pseudo Stereo Images
@@ -11,6 +13,9 @@ The demo program uses a DL model, `midasnet` to generate a depth map from a pict
 
 ### Depth Image Generated From the Input Picture (This demo won't display this image)
 ![depth](./resources/disp.png)
+
+### Side-by-side Stereo Image Output (`sbs3d.jpg`)
+![sbs3d](./resources/sbs3d.jpg)
 
 ### Required DL Models to Run This Demo
 
